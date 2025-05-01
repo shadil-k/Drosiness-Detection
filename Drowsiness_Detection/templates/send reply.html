@@ -1,0 +1,77 @@
+<!--<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">-->
+<!--<html xmlns="http://www.w3.org/1999/xhtml">-->
+<!--<head>-->
+<!--<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />-->
+<!--<title>Untitled Document</title>-->
+<!--<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">-->
+<!--  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>-->
+<!--  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>-->
+<!--  <style>-->
+<!--    table {-->
+<!--      font-family: Arial, Helvetica, sans-serif;-->
+<!--      border-collapse: collapse;-->
+<!--      width: 100%;-->
+<!--    }-->
+<!--    -->
+<!--    table td, table th {-->
+<!--      border: 1px solid #ddd;-->
+<!--      padding: 8px;-->
+<!--    }-->
+<!--    -->
+<!--    table tr:nth-child(even){background-color: #f2f2f2;}-->
+<!--    table tr:nth-child(odd){background-color: #f2f2f2;}-->
+<!--    -->
+<!--    table tr:hover {background-color: #ddd;}-->
+<!--    -->
+<!--    table th {-->
+<!--      padding-top: 12px;-->
+<!--      padding-bottom: 12px;-->
+<!--      text-align: left;-->
+<!--      background-color: #56eb6f;-->
+<!--      color: white;-->
+<!--    }-->
+<!--    body{-->
+<!--      background-color: #47cffc;-->
+<!--    }-->
+<!--    </style>-->
+<!--</head>-->
+
+<!--<body>-->
+<!--  <nav class="navbar navbar-inverse">-->
+<!--    <div class="container-fluid">-->
+<!--      <div class="navbar-header">-->
+<!--       -->
+<!--      </div>-->
+<!--      <ul class="nav navbar-nav">-->
+<!--        <li class="active"><a href="#">Block and Unblock User</a></li>-->
+<!--        <li class="active"><a href="#">Add and Manage Music</a></li>-->
+<!--        <li class="active"><a href="#">View Complaint and Send Reply</a></li>-->
+<!--        <li class="active"><a href="#">View Feedback</a></li>-->
+<!--        <li class="active"><a href="#">Log Out</a></li></ul>-->
+<!--    </div>-->
+<!--  </nav>-->
+<!--    -->
+{% extends 'admin_index.html' %}
+{% block body %}
+  <div class="container">
+    <form id="form1" name="form1" method="post" action="/send_reply">
+      {% csrf_token %}
+      <table class="table table-striped">
+        <tr>
+          <th width="178">Reply
+
+          </th>
+        </tr>
+        <tr>
+          <td><textarea name="Reply" style="width:400px"  required></textarea></td>
+        </tr>
+        <tr><td>
+         <center>
+          <input type="submit" name="Submit" class="btn btn-success" value="Send" /></center>
+        </tr>
+      </table>
+    </form>
+  </div>
+<!--</body>-->
+<!--</html>-->
+{% endblock %}

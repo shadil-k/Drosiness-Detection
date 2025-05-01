@@ -1,0 +1,82 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+<title>Untitled Document</title>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+  <style>
+    table {
+      font-family: Arial, Helvetica, sans-serif;
+      border-collapse: collapse;
+      width: 100%;
+    }
+    
+    table td, table th {
+      border: 1px solid #ddd;
+      padding: 8px;
+    }
+    
+    table tr:nth-child(even){background-color: #f2f2f2;}
+    table tr:nth-child(odd){background-color: #f2f2f2;}
+    
+    table tr:hover {background-color: #ddd;}
+    
+    table th {
+      padding-top: 12px;
+      padding-bottom: 12px;
+      text-align: left;
+      background-color: #56eb6f;
+      color: white;
+    }
+    body{
+      background-color: #47cffc;
+    }
+    </style>
+</head>
+
+<body>
+<!--  <nav class="navbar navbar-inverse">-->
+<!--    <div class="container-fluid">-->
+<!--      <div class="navbar-header">-->
+
+<!--      </div>-->
+<!--      <ul class="nav navbar-nav">-->
+<!--        <li class="active"><a href="#">Drowsiness Detection</a></li>-->
+<!--        <li class="active"><a href="#">View Alert</a></li>-->
+<!--        <li class="active"><a href="#">Send Complaint and View Reply</a></li>-->
+<!--        <li class="active"><a href="#">Send Feedback</a></li>-->
+<!--        <li class="active"><a href="#">Manage Music</a></li>-->
+<!--        <li class="active"><a href="#">Logout</a></li>-->
+<!--      </ul>-->
+<!--    </div>-->
+<!--  </nav>-->
+  <div class="container">
+    <form action="adding_musics" method="post" enctype="multipart/form-data" name="form1" id="form1">
+      {% csrf_token %}
+      <table width="281" border="1" cellspacing="2" cellpadding="2">
+        <tr>
+          <th width="133">Emotion</th>
+          <td width="134"><input type="text" name="textfield"  /></td>
+        </tr>
+        <tr>
+          <th>Music</th>
+          <td><input type="file" name="file" required pattern="[A-Z a-z 0-9.]"/></td>
+        </tr>
+        <tr>
+          <th>Details</th>
+            <td><label>
+              <input type="text" name="textfield2" required />
+            </label></td>
+        </tr>
+        <tr align="center">
+          <td colspan="2"><label>
+           <input type="submit" name="Submit"  class="btn btn-success" value="Add" />
+          </label></td>
+        </tr>
+      </table>
+    </form>
+  </div>
+</body>
+</html>
